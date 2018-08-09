@@ -1,6 +1,4 @@
-fetch('./words.json')
-  .then(res => res.json())
-  .then(json => (vm.words = json));
+const fetchUrl = './words.json';
 
 const vm = new Vue({
   el: '#app',
@@ -8,7 +6,7 @@ const vm = new Vue({
   data: {
     answer: null,
     answerColor: 'black',
-    random: 'voetbal',
+    random: '',
     userPick: '',
     words: {},
   },
@@ -55,5 +53,14 @@ const vm = new Vue({
       this.userPick = '';
       this.setRandomWord();
     },
+  },
+
+  mounted: function() {
+    fetch(fetchUrl)
+      .then(res => res.json())
+      .then(json => {
+        this.words = json;
+        this.setRandomWord();
+      });
   },
 });
