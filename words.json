@@ -1,0 +1,47 @@
+{
+  "konijn": [
+    {
+      "article": "het",
+      "translation": { "en": ["rabbit"] }
+    }
+  ],
+  "vlees": [
+    {
+      "article": "het",
+      "translation": { "en": ["meat"] }
+    }
+  ],
+  "man": [
+    {
+      "article": "de",
+      "gender": "m",
+      "translation": { "en": ["man", "husband"] }
+    }
+  ],
+  "voetbal": [
+    {
+      "article": "het",
+      "translation": { "en": ["football (sport)"] }
+    },
+    {
+      "article": "de",
+      "gender": "m",
+      "translation": {
+        "en": ["football (ball)"]
+      }
+    }
+  ],
+  "vrouw": [
+    {
+      "article": "de",
+      "gender": "v",
+      "translation": { "en": ["woman", "wife"] }
+    }
+  ],
+  "boek": [
+    {
+      "article": "het",
+      "translation": { "en": ["book"] }
+    }
+  ]
+}
