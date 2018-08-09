@@ -15,10 +15,10 @@
     <div :style="{color: answerColor}" class="word">
       <span class="article">{{ answer ? answer.article : '' }}</span>{{ randomWord }}</div>
     <div>
-      <button @click="checkAnswer('het')" :disabled="answer" :style="{borderColor: userPick === 'het' ? 'teal' : '#666'}" class="btn">het</button>
-      <button @click="checkAnswer('de')" :disabled="answer" :style="{borderColor: userPick === 'de' ? 'teal' : '#666'}" class="btn">de</button>
+      <button @click="checkAnswer('het')" v-if="!answer" class="btn">het</button>
+      <button @click="checkAnswer('de')" v-if="!answer" class="btn">de</button>
+      <button @click="next" v-if="answer" class="btn btn-next">next</button>
     </div>
-    <button @click="next" :disabled="!answer" class="btn btn-next">next</button>
     <div class="word">{{ answer ? answer.translation.en.join(', ') : '' }}</div>
   </div>
   <script src="index.js"></script>
