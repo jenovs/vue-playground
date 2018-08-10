@@ -5,30 +5,31 @@
       class="word">
     <span class="article">{{ answer ? answer.article : '' }}</span>{{ randomWord }}</div>
     <div>
-      <button 
+      <custom-button 
         v-if="!answer" 
-        class="btn" 
-        @click="checkAnswer('het')">het</button>
-      <button 
+        caption="het" 
+        @handle-click="checkAnswer">het</custom-button>
+      <custom-button 
         v-if="!answer" 
-        class="btn" 
-        @click="checkAnswer('de')">de</button>
-      <button 
+        caption="de" 
+        @handle-click="checkAnswer">de</custom-button>
+      <custom-button 
         v-if="answer" 
-        class="btn btn-next" 
-        @click="next">next</button>
+        :large="true" 
+        caption="next" 
+        @next="next">next</custom-button>
     </div>
     <div class="word">{{ answer ? answer.translation.en.join(', ') : '' }}</div>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello.vue';
+import Button from './components/Button.vue';
 
 const fetchUrl = '//api.jsonbin.io/b/5b6c71952b23fb1f2b722b4c';
 
 export default {
-  components: { hello: Hello },
+  components: { 'custom-button': Button },
   data() {
     return {
       answer: null,
@@ -101,24 +102,6 @@ export default {
   margin-right: 1ch;
   text-align: right;
   width: 3ch;
-}
-
-.btn {
-  background-color: transparent;
-  border: 2px solid #666;
-  border-radius: 2px;
-  font-size: 1.5rem;
-  height: 50px;
-  margin: 15px;
-  width: 80px;
-}
-
-.btn:disabled {
-  border-color: #999;
-}
-
-.btn-next {
-  width: 194px;
 }
 
 .word {
