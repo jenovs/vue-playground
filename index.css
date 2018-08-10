@@ -13,42 +13,5 @@ body {
 }
 
 #app {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
   height: 100%;
-  margin: auto;
-  max-width: 768px;
-  padding-top: 2rem;
-  width: 100%;
-}
-
-.article {
-  display: inline-block;
-  margin-right: 1ch;
-  text-align: right;
-  width: 3ch;
-}
-
-.btn {
-  background-color: transparent;
-  border: 2px solid #666;
-  border-radius: 2px;
-  font-size: 1.5rem;
-  height: 50px;
-  margin: 15px;
-  width: 80px;
-}
-
-.btn:disabled {
-  border-color: #999;
-}
-
-.btn-next {
-  width: 194px;
-}
-
-.word {
-  font-size: 2rem;
-  padding: 2rem;
 }
