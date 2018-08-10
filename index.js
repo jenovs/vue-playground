@@ -1,6 +1,9 @@
-const fetchUrl = './words.json';
+import Vue from 'vue';
 
-const vm = new Vue({
+const fetchUrl = '//api.jsonbin.io/b/5b6c71952b23fb1f2b722b4c';
+
+// eslint-disable-next-line
+new Vue({
   el: '#app',
 
   data: {
@@ -21,8 +24,17 @@ const vm = new Vue({
     },
   },
 
+  mounted() {
+    fetch(fetchUrl)
+      .then(res => res.json())
+      .then(json => {
+        this.words = json;
+        this.setRandomWord();
+      });
+  },
+
   methods: {
-    setRandomWord: function() {
+    setRandomWord() {
       const words = Object.keys(this.words);
       let newRandom;
 
@@ -33,7 +45,7 @@ const vm = new Vue({
       this.random = newRandom;
     },
 
-    checkAnswer: function(article) {
+    checkAnswer(article) {
       this.answerColor = 'red';
       this.userPick = article;
 
@@ -47,20 +59,11 @@ const vm = new Vue({
       }
     },
 
-    next: function() {
+    next() {
       this.answerColor = 'black';
       this.answer = null;
       this.userPick = '';
       this.setRandomWord();
     },
-  },
-
-  mounted: function() {
-    fetch(fetchUrl)
-      .then(res => res.json())
-      .then(json => {
-        this.words = json;
-        this.setRandomWord();
-      });
   },
 });
