@@ -58,7 +58,7 @@ export default {
 
     current() {
       return this.words[this.random];
-  },
+    },
 
     wordsLeft() {
       return this.notShown.length;
