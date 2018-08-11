@@ -56,7 +56,7 @@ export default {
       return notes ? `(${notes})` : '';
     },
 
-    current(foo) {
+    current() {
       return this.words[this.random];
   },
 
