@@ -48,13 +48,13 @@ module.exports = {
       template: 'index.html',
       inject: true,
     }),
-    new CopyWebpackPlugin([
-      {
-        from: resolve('static/img'),
-        to: resolve('dist/static/img'),
-        toType: 'dir',
-      },
-    ]),
+    // new CopyWebpackPlugin([
+    //   {
+    //     from: resolve('static/img'),
+    //     to: resolve('dist/static/img'),
+    //     toType: 'dir',
+    //   },
+    // ]),
     new MiniCssExtractPlugin({
       filename: 'main.css',
     }),
