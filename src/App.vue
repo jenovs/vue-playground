@@ -9,17 +9,17 @@
       <custom-button 
         v-if="!answer" 
         caption="het" 
-        @handle-click="checkAnswer">het</custom-button>
+        @handle-click="checkAnswer" />
       <custom-button 
         v-if="!answer" 
         caption="de" 
-        @handle-click="checkAnswer">de</custom-button>
+        @handle-click="checkAnswer" />
       <custom-button 
         v-if="answer" 
         :large="true" 
         :disabled="!notShown.length"
         caption="next" 
-        @next="next">next</custom-button>
+        @next="next" />
     </div>
     <div class="word">{{ answer ? answer.translation.en.join(', ') : '' }}</div>
   </div>
