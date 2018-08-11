@@ -17,6 +17,7 @@
       <custom-button 
         v-if="answer" 
         :large="true" 
+        :disabled="!notShown.length"
         caption="next" 
         @next="next">next</custom-button>
     </div>
