@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper">
+    <div class="status">Words left: {{ wordsLeft }} | Correct: {{ correct }} | Incorrect: {{ incorrect }}</div>
     <div 
       :style="{color: answerColor}" 
       class="word">
@@ -34,6 +35,8 @@ export default {
     return {
       answer: null,
       answerColor: 'black',
+      correct: 0,
+      incorrect: 0,
       random: '',
       userPick: '',
       words: {},
@@ -95,9 +98,9 @@ export default {
 
       if (isCorrectAnswer) {
         this.answerColor = 'green';
-        this.answer = answer;
+        this.correct++;
       } else {
-        this.answer = this.current[0];
+        this.incorrect++;
       }
 
       this.answer = this.words[this.random];
