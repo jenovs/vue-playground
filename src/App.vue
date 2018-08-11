@@ -40,6 +40,7 @@ export default {
       random: '',
       userPick: '',
       words: {},
+      notShown: [],
     };
   },
 
