@@ -3,7 +3,7 @@
     <div 
       :style="{color: answerColor}" 
       class="word">
-    <span class="article">{{ answer ? answer.article : '' }}</span>{{ randomWord }}</div>
+      {{ answer ? random : randomWord }}&nbsp;{{ notes }}</div>
     <div>
       <custom-button 
         v-if="!answer" 
@@ -41,12 +41,22 @@ export default {
   },
 
   computed: {
-    randomWord: function() {
-      return this.random;
+    randomWord() {
+      return this.random.split(' ')[1];
     },
 
-    current: function(foo) {
-      return this.words[this.randomWord];
+    notes() {
+      const { notes } = this.random && this.words[this.random];
+
+      return notes ? `(${notes})` : '';
+    },
+
+    current(foo) {
+      return this.words[this.random];
+  },
+
+    wordsLeft() {
+      return this.notShown.length;
     },
   },
 
@@ -55,6 +65,7 @@ export default {
       .then(res => res.json())
       .then(json => {
         this.words = json;
+        this.notShown = Object.keys(json);
         this.setRandomWord();
       });
   },
@@ -64,25 +75,32 @@ export default {
       const words = Object.keys(this.words);
       let newRandom;
 
+      if (!this.notShown.length) {
+        return;
+      }
+
       do {
         newRandom = words[Math.floor(Math.random() * words.length)];
-      } while (this.random === newRandom);
+      } while (this.random === newRandom || !this.notShown.includes(newRandom));
 
       this.random = newRandom;
+      this.notShown.splice(this.notShown.indexOf(newRandom), 1);
     },
 
     checkAnswer(article) {
       this.answerColor = 'red';
       this.userPick = article;
 
-      const answer = this.current.find((word, i) => article === word.article);
+      const isCorrectAnswer = this.random.split(' ')[0] === article;
 
-      if (answer) {
+      if (isCorrectAnswer) {
         this.answerColor = 'green';
         this.answer = answer;
       } else {
         this.answer = this.current[0];
       }
+
+      this.answer = this.words[this.random];
     },
 
     next() {

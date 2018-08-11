@@ -1,47 +1,22 @@
 {
-  "konijn": [
-    {
-      "article": "het",
-      "translation": { "en": ["rabbit"] }
-    }
-  ],
-  "vlees": [
-    {
-      "article": "het",
-      "translation": { "en": ["meat"] }
-    }
-  ],
-  "man": [
-    {
-      "article": "de",
-      "gender": "m",
-      "translation": { "en": ["man", "husband"] }
-    }
-  ],
-  "voetbal": [
-    {
-      "article": "het",
-      "translation": { "en": ["football (sport)"] }
-    },
-    {
-      "article": "de",
-      "gender": "m",
-      "translation": {
-        "en": ["football (ball)"]
-      }
-    }
-  ],
-  "vrouw": [
-    {
-      "article": "de",
-      "gender": "v",
-      "translation": { "en": ["woman", "wife"] }
-    }
-  ],
-  "boek": [
-    {
-      "article": "het",
-      "translation": { "en": ["book"] }
-    }
-  ]
+  "het konijn": {
+    "translation": { "en": ["rabbit"] }
+  },
+  "het vlees": {
+    "translation": { "en": ["meat"] }
+  },
+  "de man": {
+    "translation": { "en": ["man", "husband"] }
+  },
+  "de voetbal": {
+    "translation": { "en": ["football (ball)"] },
+    "notes": "bal"
+  },
+  "het voetbal": {
+    "translation": { "en": ["football (sport)"] },
+    "notes": "spel"
+  },
+  "de vrouw": {
+    "translation": { "en": ["woman", "wife"] }
+  }
 }
