@@ -28,7 +28,7 @@
 <script>
 import Button from './components/Button.vue';
 
-const fetchUrl = '//api.jsonbin.io/b/5b6c71952b23fb1f2b722b4c';
+const fetchUrl = 'https://s3.amazonaws.com/vj-share/words.json';
 
 export default {
   components: { 'custom-button': Button },
