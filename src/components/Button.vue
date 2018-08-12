@@ -22,7 +22,7 @@ export default Vue.extend({
     title: {
       type: String,
       default: '',
-  },
+    },
   },
   methods: {
     handleClick() {
