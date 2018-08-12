@@ -6,8 +6,9 @@
   </button>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue';
+export default Vue.extend({
   props: {
     caption: {
       type: String,
@@ -17,6 +18,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    title: {
+      type: String,
+      default: '',
+  },
   },
   methods: {
     handleClick() {
@@ -27,7 +32,7 @@ export default {
       }
     },
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>
