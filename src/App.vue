@@ -24,7 +24,9 @@
         caption="next"
         @next="next" />
     </div>
-    <div class="word">{{ answer ? answer.translation.en.join(', ') : '' }}</div>
+    <div class="word" v-if="answer">
+    <div v-for="(tr, i) in answer.translation.en" :key="i">{{ i + 1 }}. {{ tr }}</div>
+    </div>
   </div>
 </template>
 
