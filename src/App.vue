@@ -6,20 +6,20 @@
       class="word">
       {{ answer ? random : randomWord }}&nbsp;{{ notes }}</div>
     <div>
-      <custom-button 
-        v-if="!answer" 
+      <custom-button
+        v-if="!answer"
         caption="de"
         title="Shortcut: d or 1"
         @handle-click="checkAnswer" />
-      <custom-button 
+      <custom-button
         v-if="!answer" 
         caption="het"
         title="Shortcut: h or 2"
         @handle-click="checkAnswer" />
-      <custom-button 
-        v-if="answer" 
+      <custom-button
+        v-if="answer"
         title="Shortcut: Enter or Space"
-        :large="true" 
+        :large="true"
         :disabled="!notShown.length"
         caption="next"
         @next="next" />
