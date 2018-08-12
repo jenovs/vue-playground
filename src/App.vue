@@ -8,14 +8,17 @@
     <div>
       <custom-button 
         v-if="!answer" 
-        caption="het" 
+        caption="de"
+        title="Shortcut: d or 1"
         @handle-click="checkAnswer" />
       <custom-button 
         v-if="!answer" 
-        caption="de" 
+        caption="het"
+        title="Shortcut: h or 2"
         @handle-click="checkAnswer" />
       <custom-button 
         v-if="answer" 
+        title="Shortcut: Enter or Space"
         :large="true" 
         :disabled="!notShown.length"
         caption="next"
