@@ -69,6 +69,10 @@ export default {
     },
   },
 
+  created() {
+    window.addEventListener('keydown', this.handleKeypress);
+  },
+
   mounted() {
     fetch(fetchUrl)
       .then(res => res.json())
@@ -80,6 +84,23 @@ export default {
   },
 
   methods: {
+    handleKeypress(e) {
+      const keyMapping = {
+        1: 'de',
+        2: 'het',
+        d: 'de',
+        h: 'het',
+      };
+
+      if (this.userPick) {
+        if (e.key === 'Enter' || e.code === 'Space') {
+          this.next();
+        }
+      } else {
+        this.checkAnswer(keyMapping[e.key]);
+      }
+    },
+
     setRandomWord() {
       const words = Object.keys(this.words);
       let newRandom;
@@ -97,6 +118,10 @@ export default {
     },
 
     checkAnswer(article) {
+      if (!article) {
+        return;
+      }
+
       this.answerColor = 'red';
       this.userPick = article;
 
