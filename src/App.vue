@@ -18,7 +18,7 @@
         v-if="answer" 
         :large="true" 
         :disabled="!notShown.length"
-        caption="next" 
+        caption="next"
         @next="next" />
     </div>
     <div class="word">{{ answer ? answer.translation.en.join(', ') : '' }}</div>
@@ -29,6 +29,7 @@
 import Button from './components/Button.vue';
 
 const fetchUrl = 'https://s3.amazonaws.com/vj-share/words.json';
+// const fetchUrl = './words.json';
 
 export default {
   components: { 'custom-button': Button },
@@ -112,7 +113,18 @@ export default {
       this.answerColor = 'black';
       this.answer = null;
       this.userPick = '';
+
+      if (!this.notShown.length) {
+        this.reset();
+      }
+
       this.setRandomWord();
+    },
+
+    reset() {
+      this.notShown = Object.keys(this.words);
+      this.correct = 0;
+      this.incorrect = 0;
     },
   },
 };
