@@ -2,6 +2,7 @@
   <button 
     :class="['btn', {'btn-next': large}]"
     @click="handleClick"
+    :title="title"
   >{{ caption }}
   </button>
 </template>
