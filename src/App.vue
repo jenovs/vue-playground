@@ -178,7 +178,6 @@ export default {
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100%;
   margin: auto;
   max-width: 768px;
   padding-top: 2rem;
