@@ -96,6 +96,9 @@ export default {
 
       if (this.userPick) {
         if (e.key === 'Enter' || e.code === 'Space') {
+          if (!this.notShown.length) {
+            return;
+          }
           this.next();
         }
       } else {
