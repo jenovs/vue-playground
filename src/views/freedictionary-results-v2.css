@@ -1,0 +1,300 @@
+.f0f,
+.snippets > div {
+  color: #555555;
+  width: 90%;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 2.3em;
+  margin-bottom: 2em;
+  display: block;
+}
+.fr {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95em;
+  color: #555555;
+}
+.f0p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95em;
+  color: #555555;
+  text-decoration: underline;
+}
+.f5 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95em;
+  color: #555555;
+}
+.fs {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95em;
+  color: #555555;
+}
+.fb {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95em;
+  color: #555555;
+  text-decoration: underline;
+}
+.fp {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  color: #555555;
+}
+.fc {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95em;
+  color: #555555;
+  text-decoration: underline;
+}
+.fj {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95em;
+  color: #555555;
+  font-weight: bold;
+}
+.fa {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95em;
+  color: #555555;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.fg {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.66em;
+  color: #555555;
+  vertical-align: 10%;
+  font-weight: 100;
+}
+.f0i {
+  font-family: Gentium Plus, Georgia, serif;
+  font-size: 1.37em;
+  color: #c1001f;
+  font-weight: 400;
+}
+.fi {
+  font-family: Gentium Plus, Georgia, serif;
+  font-size: 1.37em;
+  color: #c1001f;
+  font-weight: 400;
+  font-style: italic;
+}
+.ff {
+  font-family: Gentium Plus, Georgia, serif;
+  font-size: 1.37em;
+  color: #c1001f;
+  text-decoration: underline;
+}
+.f2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95em;
+  color: #555555;
+}
+.fk {
+  color: #555555;
+  font-size: 0.95em;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  font-weight: bold;
+}
+.fq {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95em;
+  color: #555555;
+  font-style: italic;
+}
+.f0n {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.66em;
+  color: #555555;
+  font-style: italic;
+  vertical-align: 10%;
+}
+.fd {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95em;
+  color: #555555;
+  font-style: italic;
+  text-decoration: underline;
+}
+.f0k {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  color: #555555;
+}
+.f0o {
+  font-size: 1em;
+  font-family: Gentium Plus, Georgia, serif;
+  color: #c1001f;
+  vertical-align: 10%;
+  font-weight: 400;
+}
+.ft {
+  font-size: 0.66em;
+  font-family: Gentium Plus, Georgia, serif;
+  color: #c1001f;
+  vertical-align: 1em;
+}
+.f0l {
+  font-weight: 100;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.66em;
+  vertical-align: -5%;
+}
+.f9 {
+  font-weight: 100;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.66em;
+  vertical-align: 10%;
+}
+.f0d {
+  color: #555555;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 0.6em;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  vertical-align: 50%;
+  margin-left: 0.5ex;
+}
+.f0a {
+  color: #0000cc;
+  background-color: #eaeaea;
+  font-style: normal;
+  font-size: 0.75em;
+  font-family: Arial, sans-serif;
+  border: 1px solid #0000cc;
+  margin-right: 0.5ex;
+  padding-left: 0.5ex;
+  padding-right: 0.5ex;
+  text-decoration: none;
+  vertical-align: 0.07em;
+}
+.fv {
+  color: #0000cc;
+  background-color: #eaeaea;
+  font-style: normal;
+  font-size: 0.65em;
+  font-family: Arial, sans-serif;
+  border: 1px solid #0000cc;
+  margin-right: 0.5ex;
+  padding-left: 0.5ex;
+  padding-right: 0.5ex;
+  text-decoration: none;
+  vertical-align: 0.07em;
+}
+.f0h {
+  display: block;
+}
+.f3 {
+  display: block;
+  clear: left;
+}
+.fh {
+  display: block;
+}
+.fx {
+  margin-left: 1em;
+}
+.fz {
+  float: left;
+  width: 1em;
+  text-align: left;
+  display: block;
+}
+.f0j {
+  padding-top: 0.01em;
+  display: block;
+}
+.f0g {
+  padding-top: 0.625em;
+}
+.f0c {
+  padding-top: 0.625em;
+}
+.fu {
+  display: block;
+}
+.f0 {
+  margin-left: 1.4em;
+  display: inline-block; /* hack voor chaotic border in IE */
+}
+.f0 {
+  display: block; /* hack voor chaotic border in IE */
+}
+.f4 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #c1001f;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 1em;
+  display: block;
+}
+.f6 {
+  font-family: Trajectum, Code2000, 'Arial Unicode MS', sans-serif;
+  font-size: 0.9em;
+}
+.fm {
+  color: inherit;
+  text-decoration: none;
+}
+.f8 {
+  color: #555555;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 1em;
+  font-family: Gentium Plus, Georgia, serif;
+}
+.fe {
+  color: #555555;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 0.95em;
+  font-family: Gentium Plus, Georgia, serif;
+  text-decoration: underline;
+}
+.f0e {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95em;
+  color: #555555;
+  font-weight: 600;
+}
+.f7 {
+  border: 1px solid red;
+  background-color: #ffcccc;
+}
+.fy {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.5em;
+  vertical-align: 0.8em;
+  margin-right: -0.15em;
+}
+.f1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.5em;
+  vertical-align: -0.15em;
+  margin-left: -0.15em;
+}
+.f0m {
+  font-size: 0.95em;
+}
+.fn {
+  background-color: #98fb98;
+  border: 1px dashed #00ff00;
+}
+.fw {
+  background-color: #fb9898;
+  border: 1px dashed #ff0000;
+}
+.fl {
+  background-color: #ffffe0;
+  border-top: 1px solid #ffff00;
+  border-bottom: 1px solid #ffff00;
+  border-right: 1px solid #ffff00;
+}
+.fo ::-moz-selection {
+  background: #98fb98;
+}
+.fo ::selection {
+  background: #98fb98;
+}
