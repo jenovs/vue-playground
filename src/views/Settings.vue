@@ -73,12 +73,14 @@ export default Vue.extend({
     },
     checkResult(): string {
       const keys = Object.keys(this.words);
+      const result = [];
       if (keys.includes(`de ${this.checkWord}`)) {
-        return `"de ${this.checkWord}" exists`;
-      } else if (keys.includes(`het ${this.checkWord}`)) {
-        return `"het ${this.checkWord}" exists`;
+        result.push(`"de ${this.checkWord}"`);
       }
-      return 'Word not found';
+      if (keys.includes(`het ${this.checkWord}`)) {
+        result.push(`"het ${this.checkWord}"`);
+      }
+      return result.length ? result.join(' / ') + ' found' : 'Word not found';
     },
   },
 
