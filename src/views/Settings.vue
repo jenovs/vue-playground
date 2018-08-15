@@ -16,18 +16,20 @@
   </div>
   <div class="form-wrapper">
     <form @submit="handleSubmit">
-      <select name="article" id="article" @change="handleSelect" autofocus ref="article">
+      <select name="article" id="article" @change="handleSelect" autofocus ref="article" :disabled="editMode">
         <option value="" :selected="article === ''">select article</option>
         <option value="de" :selected="article === 'de'">de</option>
         <option value="het" :selected="article === 'het'">het</option>
       </select>
-      <input type="text" placeholder="noun" v-model="noun" @blur="scrape">
+      <input type="text" placeholder="noun" v-model="noun" @blur="scrape" :disabled="editMode">
       <input type="text" placeholder="plural" v-model="plural">
       <textarea type="text" placeholder="translations" v-model="translation"/>
       <input type="text" placeholder="notes" v-model="notes">
-      <button type="submit" :disabled="!article || !noun">Save</button>
-      <p style="color: red" v-if="isDuplicate">Word already exists</p>
+      <button type="submit" :disabled="!editMode && (!article || !noun || isDuplicate)">{{ editMode ? 'Save' : 'Add' }}</button>
     </form>
+    <p style="color: red" v-if="isDuplicate">Word already exists</p>
+    <p v-else>&nbsp;</p>
+    <button v-if="isDuplicate" @click="editTerm">{{ editMode ? 'Cancel Edit' : 'Edit' }}</button>
     <div style="margin-top: 1rem;">
       <button @click="clear" :disabled="!scrapedNl && !scrapedTr">Clear </button>
     </div>
@@ -50,6 +52,7 @@ export default Vue.extend({
   data: () => ({
     article: '',
     checkWord: '',
+    editMode: false,
     fetchUrl,
     isDangerZoneEnabled: false,
     notes: '',
@@ -113,6 +116,17 @@ export default Vue.extend({
         .then(res => res.text())
         .then(text => (this.scrapedTr = text));
     },
+
+    cancelEdit() {
+      this.editMode = false;
+
+      const term = (this.words as any)[`${this.article} ${this.noun}`];
+
+      this.plural = term.plural;
+      this.translation = term.translation.en.join('\n');
+      this.notes = term.notes;
+    },
+
     clear() {
       this.scrapedNl = '';
       this.scrapedTr = '';
@@ -121,6 +135,20 @@ export default Vue.extend({
       this.noun = '';
       this.plural = '';
       this.translation = '';
+      this.editMode = false;
+    },
+
+    editTerm() {
+      if (this.editMode) {
+        return this.cancelEdit();
+      }
+
+      this.editMode = true;
+      const term = (this.words as any)[`${this.article} ${this.noun}`];
+
+      this.plural = term.plural;
+      this.translation = term.translation.en.join('\n');
+      this.notes = term.notes;
     },
 
     getData() {
@@ -139,12 +167,37 @@ export default Vue.extend({
         });
     },
 
+    handleEdit() {
+      const term = (this.words as any)[`${this.article} ${this.noun}`];
+
+      if (!term) {
+        return;
+      }
+
+      const notes = this.notes ? { notes: this.notes } : {};
+
+      (this.words as any)[`${this.article} ${this.noun}`] = {
+        plural: this.plural || term.plural,
+        translation: {
+          en: this.translation.split('\n') || term.translation,
+        },
+        ...notes,
+      };
+
+      this.saveData();
+      this.clear();
+    },
+
     handleSelect(e: any) {
       this.article = e.target.value;
     },
 
     handleSubmit(e: any) {
       e.preventDefault();
+
+      if (this.editMode) {
+        return this.handleEdit();
+      }
 
       this.noun = this.noun.trim();
 
