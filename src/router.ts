@@ -22,5 +22,11 @@ export default new Router({
       component: () =>
         import(/* webpackChunkName: "settings" */ './views/Settings.vue'),
     },
+    {
+      path: '/dict',
+      name: 'dict',
+      component: () =>
+        import(/* webpackChunkName: "settings" */ './views/Dictionary.vue'),
+    },
   ],
 });
